@@ -1,0 +1,26 @@
+# name: Envoi de mail depuis le formulaire
+
+# on:
+#   push:
+#     branches:
+#       - main
+
+# jobs:
+#   build:
+#     runs-on: ubuntu-latest
+
+#     steps:
+#     - name: Vérification du dépôt
+#       uses: actions/checkout@v2
+
+#     - name: Envoi du mail
+#       uses: dawidd6/action-send-mail@v3
+#       with:
+#         server_address: smtp.example.com
+#         server_port: 587
+#         username: ${{ secrets.EMAIL_USERNAME }}
+#         password: ${{ secrets.EMAIL_PASSWORD }}
+#         subject: "Nouveau message depuis le formulaire"
+#         body: "Prénom: ${{ github.event.inputs.prenom }}\nNom: ${{ github.event.inputs.nom }}\nEmail: ${{ github.event.inputs.email }}\nMessage: ${{ github.event.inputs.txt }}"
+#         to: "jouronlaurent@hotmail.com"
+#         from: "tonadresse@example.com"

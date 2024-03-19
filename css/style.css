@@ -5,8 +5,8 @@
 }
 
 :root {
-    --color1: #FEEA9A;  /* Couleur de la police d'écriture rgb(254, 234, 154)
-    --color2: #3c65af;  /* Bleu Defilépsie rgb(6 104 175) */
+    --color1: #FEEA9A;  /* Couleur de la police d'écriture rgb(254, 234, 154) */
+    /* --color2: #3c65af;   Bleu Defilépsie rgb(6 104 175) */
     --color3: #333333;  /* Gris rgb(51 51 51) */
     --color4: #f1f1f1;  /* Gris très clair rgb(241 241 241) */
     --color5: #002D5F;  /* Bleu foncé Expressions Parfumées rgb(0 45 95) */
@@ -14,9 +14,20 @@
     --color7: #F6D14F;  /* Jaune Orangé Coiffirst rgb(246 209 76) */
     --color8: #B9B9B9;  /* gris Dessange rgb(185 185 185) */
     --color9: #bf1e2e;  /* Rouge Defilépsie rgb(191 30 46) */
-    --color10: #485563; /* Gris navbar*/
-    --color11: #29323c; /* Filtre gradiant*/
-}
+    --color10: #485563; /* Gris navbar */
+    --color11: #29323c; /* Filtre gradiant */
+    --color12: #A30000; /* Rest framework */
+    --color13: #103E2E; /* Django */
+    --color14: #EFD81D; /* Javascript */
+    --color15: #366C9C; /* Python */
+    --color16: #006EBF; /* SQL */
+    --color17: #5C2B3D; /* Windev */
+    --color18: #000000; /* GitHub, CircleCI*/
+    --color19: #251F3D; /* Sentry */
+    --color20: #4CCBFF; /* Docker */
+    --color21: #317CAB; /* AceSoftware */
+    }
+
 html {
     scroll-behavior: smooth;
 }
@@ -421,7 +432,7 @@ h1 {
     color: #e7e7e7;
 }
 .fond-forme {
-    background: #485563;
+    background: var(--color10);
     background-image: linear-gradient(to right, var(--color11), var(--color10));
     width: 2300px;
     height: 1000px;
@@ -700,7 +711,7 @@ h1 {
 }
 .grille-skill {
     display: grid;
-    grid-template: repeat(4,80px) / repeat(2, 500px);
+    grid-template: repeat(5,80px) / repeat(2, 500px);
     grid-gap: 50px;
     padding-left: 300px;
 }
@@ -722,32 +733,50 @@ h1 {
     background: rgb(210,210,210);
     border-radius: 5px;
 }
+
 .b1 {
     width: 30%;
-    background: #EFD81D
+    background: var(--color14);
 }
 .b2 {
     width: 60%;
-    background: #366C9C;
+    background: var(--color15);
 }
 
 .b3 {
     width: 60%;
-    background: #006EBF;
+    background: var(--color16);
 }
 .b4 {
     width: 50%;
-    background: #5C2B3D;
+    background: var(--color17);
 }
 
 .b5 {
     width: 70%;
-    background: #103E2E;
+    background: var(--color13);
 }
 .b6 {
     width: 70%;
-    background: #802D2D;
+    background: var(--color12);
 }
+.b7 {
+    width: 50%;
+    background: var(--color18);
+}
+.b8 {
+    width: 60%;
+    background: var(--color19);
+}
+.b9 {
+    width: 40%;
+    background: var(--color18);
+}
+.b10 {
+    width: 60%;
+    background: var(--color20);
+}
+
 .label-skill {
     font-size: 27px;
     font-family: 'Poppins', sans-serif;
@@ -762,7 +791,7 @@ h1 {
 /* Medias Range */
 @media screen and (max-width: 1400px) {
     .grille-skill{
-        grid-template: repeat(4,80px) / repeat(2,450px);
+        grid-template: repeat(5,80px) / repeat(2,450px);
     }
     .barre-grises {
         width: 450px;
@@ -778,7 +807,7 @@ h1 {
         padding-left: 0;
     }
     .grille-skill {
-        grid-template: repeat(8,80px) / 600px;
+        grid-template: repeat(10,80px) / 600px;
         padding-left: 0;
     }
     .barre-grises {
@@ -788,7 +817,7 @@ h1 {
 
 @media screen and (max-width: 700px) {
     .grille-skill {
-        grid-template: repeat(8,80px) / 400px;
+        grid-template: repeat(10,80px) / 400px;
     }
     .barre-grises {
         width: 400px
@@ -810,7 +839,7 @@ h1 {
     }
 
     .grille-skill{
-        grid-template: repeat(8,80px) / 300px;
+        grid-template: repeat(10,80px) / 300px;
         grid-gap: 40px;
     }
     .barre-grises {
@@ -838,7 +867,7 @@ h1 {
     justify-content: center;
 }
 .barre-verticale {
-    height: 1000px;
+    height: 1243px;
     width: 5px;
     background: var(--color3);
     display: flex;
@@ -889,15 +918,18 @@ h1 {
     transform: translate(0,0);
 }
 .bloc1 {
-    background: var(--color5);
+    background: var(--color21);
 }
 .bloc2 {
-    background: var(--color6);
+    background: var(--color5);
 }
 .bloc3 {
-    background: var(--color7);
+    background: var(--color6);
 }
 .bloc4 {
+    background: var(--color7);
+}
+.bloc5 {
     background: var(--color8);
 }
 .titre-section-bloc {
