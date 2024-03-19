@@ -40,7 +40,7 @@ body {
 .nav-gauche {
     width: 300px;
     height: 100vh;
-    min-height: 800px;
+    min-height: 720px;
     background: var(--color10);
     background-image: linear-gradient(to left, var(--color11), var(--color10));
     position: fixed;
@@ -209,7 +209,7 @@ body {
     background-size: cover;
     background-position: right;
     height: 100vh;
-    min-height: 800px;
+    min-height: 700px;
     width: calc(100% - 300px);
     margin-left: auto;
     position: relative;
@@ -285,7 +285,7 @@ h1 {
 @keyframes pulse {
     to {
         box-shadow: 0 0 0 8px rgba(255,255,255,0.01);
-    }   
+    }
 }
 .logo-btn-rond-acc {
     width: 35px;
@@ -434,7 +434,7 @@ h1 {
 .fond-forme {
     background: var(--color10);
     background-image: linear-gradient(to right, var(--color11), var(--color10));
-    width: 2300px;
+    width: 2000px;
     height: 1000px;
     position: absolute;
     transform: rotate(-45deg) translateX(100px) translateY(-15px);
@@ -948,7 +948,7 @@ h1 {
 @media screen and (max-width: 950px) {
 
     .barre-verticale {
-        height: 1200px;
+        height: 1480px;
     }
     .bloc {
         height: 250px;
@@ -970,7 +970,7 @@ h1 {
         height: 400px;
     }
     .barre-verticale {
-        height: 1800px;
+        height: 2230px;
     }
 }
 
