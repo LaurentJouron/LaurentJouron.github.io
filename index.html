@@ -179,7 +179,9 @@
         <div class="cont-portfolio">
             <div class="item vague1">
                 <div class="cont-img-port">
-                    <img src="ressources/bootstrap.jpg" alt="img portfolio">
+                    <video autoplay loop playsinline style="pointer-events: none;" width="450">
+                        <source src="ressources/first_project.mp4" type="video/mp4" />
+                    </video>
                 </div>
                 <h3>Mon fabuleux projet</h3>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil, dolore?</p>
@@ -188,7 +190,9 @@
 
             <div class="item vague1">
                 <div class="cont-img-port">
-                    <img src="ressources/console.jpg" alt="img portfolio">
+                    <video autoplay loop playsinline style="pointer-events: none;" width="450">
+                        <source src="ressources/second_project.mp4" type="video/mp4" />
+                    </video>
                 </div>
                 <h3>Mon fabuleux projet</h3>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil, dolore?</p>
@@ -197,7 +201,9 @@
 
             <div class="item vague1">
                 <div class="cont-img-port">
-                    <img src="ressources/animcss.jpg" alt="img portfolio">
+                    <video autoplay loop playsinline style="pointer-events: none;" width="450">
+                        <source src="ressources/matrix.mp4" type="video/mp4" />
+                    </video>
                 </div>
                 <h3>Mon fabuleux projet</h3>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil, dolore?</p>
@@ -206,7 +212,9 @@
 
             <div class="item vague2">
                 <div class="cont-img-port">
-                    <img src="ressources/bootstrapsite.jpg" alt="img portfolio">
+                    <video autoplay loop playsinline style="pointer-events: none;" width="450">
+                        <source src="ressources/fourth_project.mp4" type="video/mp4" />
+                    </video>
                 </div>
                 <h3>Mon fabuleux projet</h3>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil, dolore?</p>
@@ -215,7 +223,9 @@
 
             <div class="item vague2">
                 <div class="cont-img-port">
-                    <img src="ressources/flex.jpg" alt="img portfolio">
+                    <video autoplay loop playsinline style="pointer-events: none;" width="450">
+                        <source src="ressources/cyborg.mp4" type="video/mp4" />
+                    </video>
                 </div>
                 <h3>Mon fabuleux projet</h3>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil, dolore?</p>
@@ -224,7 +234,9 @@
 
             <div class="item vague2">
                 <div class="cont-img-port">
-                    <img src="ressources/d3.jpg" alt="img portfolio">
+                    <video autoplay loop playsinline style="pointer-events: none;" width="450">
+                        <source src="ressources/communication.mp4" type="video/mp4" />
+                    </video>
                 </div>
                 <h3>Mon fabuleux projet</h3>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil, dolore?</p>
@@ -233,7 +245,9 @@
 
             <div class="item vague3">
                 <div class="cont-img-port">
-                    <img src="ressources/Menus.jpg" alt="img portfolio">
+                    <video autoplay loop playsinline style="pointer-events: none;" width="450">
+                        <source src="ressources/fast_typing.mp4" type="video/mp4" />
+                    </video>
                 </div>
                 <h3>Mon fabuleux projet</h3>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil, dolore?</p>
@@ -242,7 +256,9 @@
 
             <div class="item vague3">
                 <div class="cont-img-port">
-                    <img src="ressources/projetsCars.jpg" alt="img portfolio">
+                    <video autoplay loop playsinline style="pointer-events: none;" width="450">
+                        <source src="ressources/earth.mp4" type="video/mp4" />
+                    </video>
                 </div>
                 <h3>Mon fabuleux projet</h3>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil, dolore?</p>
@@ -251,7 +267,9 @@
 
             <div class="item vague3">
                 <div class="cont-img-port">
-                    <img src="ressources/form.jpg" alt="img portfolio">
+                    <video autoplay loop playsinline style="pointer-events: none;" width="450">
+                        <source src="ressources/tracking.mp4" type="video/mp4" />
+                    </video>
                 </div>
                 <h3>Mon fabuleux projet</h3>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil, dolore?</p>
@@ -273,7 +291,7 @@
                 </div>
 
                 <div class="range-cont">
-                    <p class="label-skill">Python</p>
+                    <p class="label-skill">Python </p>
                     <p class="number-skill">60%</p>
                     <div class="barre-skill b2"></div>
                     <div class="barre-grises"></div>
@@ -420,26 +438,25 @@
     <section class="section-contact" id="contact">
         <h2><strong>Discutons ensemble</strong> <br> d'un projet</h2>
         <div class="container-form">
-            <form class="form-bloc">
+            <form class="form-bloc" action="envoi.php" method="post">
 
                 <div class="form-groupe">
                     <label for="prenom">Prénom</label>
-                    <input type="text" required maxlength="16" id="prenom">
+                    <input type="text" maxlength="16" id="prenom" name="prenom" data-name="prenom" required>
                 </div>
-
+                
                 <div class="form-groupe">
                     <label for="nom">Nom</label>
-                    <input type="text" required maxlength="16" id="nom">
+                    <input type="text" maxlength="16" id="nom" name="nom" data-name="nom" required>
                 </div>
-
+                
                 <div class="form-groupe">
                     <label for="email">Email</label>
-                    <input type="text" required maxlength="25" id="email">
+                    <input type="text" maxlength="25" id="email" name="email" data-name="email" required>
                 </div>
 
                 <div class="form-groupe">
-                    <textarea id="txt" placeholder="Votre message"
-                              required></textarea>
+                    <textarea id="txt" name="message" placeholder="Votre message" required name="message"></textarea>
                 </div>
 
                 <div class="form-groupe">
