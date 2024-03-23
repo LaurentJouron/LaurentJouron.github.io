@@ -204,7 +204,7 @@ body {
 
 /* ------------------ Accueil ---------------- */
 .accueil {
-    background: linear-gradient(to right bottom, rgba(4, 4, 56, 1), rgba(4, 4, 56, 0.1)), url(../ressources/img/png/MatrixRain.png);
+    background: linear-gradient(to right bottom, rgba(30, 30, 30, 1), rgba(241, 241, 241, 0.1)), url(../ressources/img/computer.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: right;
