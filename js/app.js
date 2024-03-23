@@ -105,17 +105,17 @@ const scene = new ScrollMagic.Scene({
 // .addIndicators()
 .addTo(controller)
 
-// Anim portfolio
-
-const portfolioContainer = document.querySelector('.portfolio')
-const titrePortfolio = document.querySelector('.titre-port')
-const itemPortfolio = document.querySelectorAll('.vague1')
+const portfolioContainer = document.querySelector('.portfolio');
+const titrePortfolio = document.querySelector('.titre-port');
+const itemPortfolio = document.querySelectorAll('.vague1');
+const videos = document.querySelectorAll('.cont-img-port video');
+const videoContainers = document.querySelectorAll('.cont-img-port');
 
 const tlPortfolio = new TimelineMax();
 
 tlPortfolio
 .from(titrePortfolio, {y: -50, opacity: 0, duration: 0.5})
-.staggerFrom(itemPortfolio, 1, {opacity: 0}, 0.2, '-=0.5')
+.staggerFrom(itemPortfolio, 1, {opacity: 0}, 0.2, '-=0.5');
 
 const scene2 = new ScrollMagic.Scene({
     triggerElement: portfolioContainer,
@@ -123,8 +123,59 @@ const scene2 = new ScrollMagic.Scene({
     reverse: false
 })
 .setTween(tlPortfolio)
-// .addIndicators()
-.addTo(controller)
+.addTo(controller);
+
+// Désactive la lecture automatique des vidéos par défaut
+videos.forEach(video => {
+    video.removeAttribute('autoplay');
+    video.pause();
+});
+
+// Ajoute une animation TweenMax pour chaque conteneur de vidéo
+videoContainers.forEach(container => {
+    let isPlaying = false;
+
+    container.addEventListener('mouseenter', () => {
+        const video = container.querySelector('video');
+        isPlaying = true;
+        video.play();
+    });
+
+    container.addEventListener('mouseleave', () => {
+        const video = container.querySelector('video');
+        isPlaying = false;
+        video.currentTime = 0;
+        video.pause();
+    });
+
+    // Détection du défilement de la page
+    window.addEventListener('scroll', () => {
+        // Récupère les dimensions de la fenêtre
+        const windowHeight = window.innerHeight;
+
+        // Vérifie la position de chaque conteneur de vidéo par rapport à la fenêtre
+        const containerRect = container.getBoundingClientRect();
+        const containerTop = containerRect.top;
+        const containerBottom = containerRect.bottom;
+
+        // Calcule les pourcentages
+        const bottomPercentage = (containerBottom / windowHeight) * 100;
+        const topPercentage = ((windowHeight - containerTop) / windowHeight) * 100;
+
+        // Démarre ou arrête la vidéo en fonction de la position du conteneur
+        if (bottomPercentage > 40 && topPercentage > 40 && !isPlaying) {
+            const video = container.querySelector('video');
+            video.play();
+            isPlaying = true;
+        } else if ((bottomPercentage < 40 || topPercentage < 40) && isPlaying) {
+            const video = container.querySelector('video');
+            video.pause();
+            isPlaying = false;
+        }
+    });
+});
+
+
 
 // Vague 2
 const itemPortfolio2 = document.querySelectorAll('.vague2')
