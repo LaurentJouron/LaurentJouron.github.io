@@ -28,11 +28,11 @@ typewriter
 .typeString('<span style="color: #FEEA9A;">Je suis développeur <strong>web Python back-end</strong></span>')
 .pauseFor(1600)
 .deleteChars(39)
-.typeString('<span style="color: #FEEA9A;">Expert <strong>Django</strong></span>')
+.typeString('<span style="color: #FEEA9A;">Maîtrise <strong>Django</strong></span>')
 .pauseFor(500)
 .typeString('<span style="color: #FEEA9A;"> et <strong>CICD</strong></span>')
 .pauseFor(1000)
-.deleteChars(21)
+.deleteChars(23)
 .typeString('<span style="color: #FEEA9A;">Utilisateur de <strong>GitHub</strong></span>')
 .pauseFor(500)
 .typeString('<span style="color: #FEEA9A;">, <strong>CircleCI</strong></span>')
@@ -167,11 +167,11 @@ videoContainers.forEach(container => {
         const topPercentage = ((windowHeight - containerTop) / windowHeight) * 100;
 
         // Démarre ou arrête la vidéo en fonction de la position du conteneur
-        if (bottomPercentage > 40 && topPercentage > 40 && !isPlaying) {
+        if (bottomPercentage > 35 && topPercentage > 30 && !isPlaying) {
             const video = container.querySelector('video');
             video.play();
             isPlaying = true;
-        } else if ((bottomPercentage < 40 || topPercentage < 40) && isPlaying) {
+        } else if ((bottomPercentage < 35 || topPercentage < 30) && isPlaying) {
             const video = container.querySelector('video');
             video.pause();
             isPlaying = false;

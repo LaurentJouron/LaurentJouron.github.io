@@ -609,7 +609,7 @@ h1 {
     height: 220px;
     overflow: hidden;
 }
-.cont-img-port img {
+.cont-img-port video {
     width: 100%;
     height: auto;
 }
