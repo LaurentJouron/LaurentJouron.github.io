@@ -85,7 +85,6 @@ window.addEventListener('load', () => {
 })
 
 // Animation ScrollMagic GSAP presentation
-
 const presentationContainer = document.querySelector('.presentation')
 const titrePres = document.querySelector('.titre-pres');
 const presGauche = document.querySelector('.pres-gauche')
@@ -179,8 +178,6 @@ videoContainers.forEach(container => {
     });
 });
 
-
-
 // Vague 2
 const itemPortfolio2 = document.querySelectorAll('.vague2')
 
@@ -195,7 +192,6 @@ const scene3 = new ScrollMagic.Scene({
     reverse: false
 })
 .setTween(tlPortfolio2)
-// .addIndicators()
 .addTo(controller)
 
 // Vague 3
@@ -239,3 +235,41 @@ const scene5 = new ScrollMagic.Scene({
 })
 .setTween(tlCompetences)
 .addTo(controller);
+
+// Carousel
+var angle = 0;
+var startX = 0;
+var dragging = false;
+
+function galleryspin(sign) { 
+spinner = document.querySelector("#spinner");
+if (!sign) { angle = angle + 45; } else { angle = angle - 45; }
+spinner.setAttribute("style","-webkit-transform: rotateY("+ angle +"deg); -moz-transform: rotateY("+ angle +"deg); transform: rotateY("+ angle +"deg);");
+}
+
+// Fonction pour démarrer le glissement
+function startDrag(event) {
+    dragging = true;
+    startX = event.touches[0].clientX;
+}
+
+// Fonction pour mettre à jour la rotation du carousel pendant le glissement
+function duringDrag(event) {
+    if (dragging) {
+        var moveX = event.touches[0].clientX - startX;
+        angle += moveX * 0.2; // Réglez la sensibilité du glissement ici
+        document.querySelector("#spinner").style.transform = "rotateY(" + angle + "deg)";
+        startX = event.touches[0].clientX;
+    }
+}
+
+// Fonction pour arrêter le glissement
+function stopDrag() {
+    dragging = false;
+}
+
+// Ajouter les écouteurs d'événements tactiles
+document.addEventListener("touchstart", startDrag);
+document.addEventListener("touchmove", duringDrag);
+document.addEventListener("touchend", stopDrag);
+document.addEventListener("touchcancel", stopDrag);

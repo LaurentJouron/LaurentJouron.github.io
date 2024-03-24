@@ -6,7 +6,7 @@
 
 :root {
     --color1: #FEEA9A;  /* Couleur de la police d'écriture rgb(254, 234, 154) */
-    /* --color2: #3c65af;   Bleu Defilépsie rgb(6 104 175) */
+    --color2: #3c65af;  /* Bleu Defilépsie rgb(6 104 175) */
     --color3: #333333;  /* Gris rgb(51 51 51) */
     --color4: #f1f1f1;  /* Gris très clair rgb(241 241 241) */
     --color5: #002D5F;  /* Bleu foncé Expressions Parfumées rgb(0 45 95) */
@@ -990,7 +990,7 @@ h1 {
     justify-content: center;
     align-items: center;
     border-top: 1px dashed var(--color3);
-    border-bottom: 1px dashed var(--color3);
+    border-bottom: 3px dashed var(--color1);
 }
 .txt-par {
     font-family: 'Poppins', sans-serif;
@@ -1030,8 +1030,8 @@ h1 {
 @media screen and (max-width: 550px) {
     .section-parallax {
         flex-direction: column;
-        /* background-image: linear-gradient(to right bottom, rgba(4, 4, 56, 0.3), rgba(4, 4, 56, 0.3)), url(../ressources/fond_parallax.jpg);
-        background-attachment: fixed; */
+        background-image: linear-gradient(to right bottom, rgba(4, 4, 56, 0.3), rgba(4, 4, 56, 0.3)), url(../ressources/fond_parallax.jpg);
+        background-attachment: fixed;
     }
     .txt-par {
         font-size: 20px;
@@ -1040,6 +1040,96 @@ h1 {
         margin: 20px 0px;
     }
 }
+
+/* Caroussel */
+div#carousel {
+    perspective: 1200px;
+    background: linear-gradient(to right bottom, rgba(4, 4, 56, 0.3), rgba(4, 4, 56, 0.3)), url(../ressources/img/fond_parallax.jpg) no-repeat right / cover fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-top: 5%;
+    font-size: 0;
+    width: 100%; /* La largeur du carousel occupe toute la largeur de la fenêtre */
+    margin: 0 auto; /* Centrage horizontal */
+    margin-left: 300px; /* Décalage à droite de 300px par défaut */
+    margin-right: 0; /* Réinitialisation de la marge droite */
+    margin-bottom: 3rem;
+    overflow: hidden;
+}
+
+/* Ajout de règles pour les petits écrans */
+@media only screen and (max-width: 1024px) {
+    div#carousel {
+        margin-left: 0; /* Réinitialisation de la marge gauche pour les petits écrans */
+        margin-right: 0; /* Réinitialisation de la marge droite pour les petits écrans */
+    }
+}
+
+/* Ajout de règles pour les laptops */
+@media only screen and (min-width: 1025px) {
+    div#carousel {
+        margin-left: 220px; /* Décalage à droite de 300px sur les laptops */
+        margin-right: 0; /* Réinitialisation de la marge droite pour les laptops */
+    }
+}
+/* Ajout de règles pour les petites flèches */
+span.ss-icon {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+/* Ajout de règles pour les petits écrans */
+@media only screen and (max-width: 1024px) {
+    span.ss-icon {
+        display: none; /* Masquer les flèches sur les petits écrans */
+    }
+}
+
+
+figure#spinner { 
+    transform-style: preserve-3d; 
+    height: 300px; 
+    transform-origin: 50% 50% -500px; 
+    transition: 1s; 
+} 
+
+figure#spinner img { 
+    width: 40%; 
+    max-width: 425px;
+    position: absolute;
+    left: 30%;
+    transform-origin: 50% 50% -500px;
+    outline:1px solid transparent; 
+}
+
+figure#spinner img:nth-child(1) { transform:rotateY(0deg); }
+figure#spinner img:nth-child(2) { transform: rotateY(-45deg); }
+figure#spinner img:nth-child(3) { transform: rotateY(-90deg); }
+figure#spinner img:nth-child(4) { transform: rotateY(-135deg); }
+figure#spinner img:nth-child(5){ transform: rotateY(-180deg); }
+figure#spinner img:nth-child(6){ transform: rotateY(-225deg); }
+figure#spinner img:nth-child(7){ transform: rotateY(-270deg); }
+figure#spinner img:nth-child(8){ transform: rotateY(-315deg); }
+
+div#carousel ~ span { 
+    color: var(--color1);
+    margin: 5%; 
+    display: inline-block; 
+    text-decoration: none; 
+    font-size: 2rem; 
+    transition: 0.6s color; 
+    position: relative;
+    padding-left: 300px;
+    margin-top: -6rem; 
+    border-bottom: none; 
+    line-height: 0; 
+}
+
+div#carousel ~ span:hover { color: var(--color2); cursor: pointer; }
+
 
 /* Section Contact */
 .section-contact {
