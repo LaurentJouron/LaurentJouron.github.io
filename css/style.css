@@ -1044,15 +1044,15 @@ h1 {
 /* Caroussel */
 div#carousel {
     perspective: 1200px;
-    background: linear-gradient(to right bottom, rgba(4, 4, 56, 0.3), rgba(4, 4, 56, 0.3)), url(../ressources/img/fond_parallax.jpg) no-repeat right / cover fixed;
+    background-image: linear-gradient(to right, var(--color11), var(--color10));
     background-repeat: no-repeat;
     background-size: cover;
     padding-top: 5%;
     font-size: 0;
     width: 100%; /* La largeur du carousel occupe toute la largeur de la fenêtre */
     margin: 0 auto; /* Centrage horizontal */
-    margin-left: 300px; /* Décalage à droite de 300px par défaut */
-    margin-right: 0; /* Réinitialisation de la marge droite */
+    /* margin-left: 300px; Décalage à droite de 300px par défaut */
+    /* margin-right: 0; Réinitialisation de la marge droite */
     margin-bottom: 3rem;
     overflow: hidden;
 }
@@ -1070,6 +1070,7 @@ div#carousel {
     div#carousel {
         margin-left: 220px; /* Décalage à droite de 300px sur les laptops */
         margin-right: 0; /* Réinitialisation de la marge droite pour les laptops */
+
     }
 }
 /* Ajout de règles pour les petites flèches */
@@ -1084,17 +1085,16 @@ span.ss-icon {
 /* Ajout de règles pour les petits écrans */
 @media only screen and (max-width: 1024px) {
     span.ss-icon {
-        display: none; /* Masquer les flèches sur les petits écrans */
+        display: none;
     }
 }
-
 
 figure#spinner { 
     transform-style: preserve-3d; 
     height: 300px; 
     transform-origin: 50% 50% -500px; 
     transition: 1s; 
-} 
+}
 
 figure#spinner img { 
     width: 40%; 
@@ -1127,9 +1127,7 @@ div#carousel ~ span {
     border-bottom: none; 
     line-height: 0; 
 }
-
 div#carousel ~ span:hover { color: var(--color2); cursor: pointer; }
-
 
 /* Section Contact */
 .section-contact {
